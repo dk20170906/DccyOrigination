@@ -4,7 +4,7 @@
 }
 
 body {
-    background-image: url(../images/bg.png);
+    background-image: url(../images/bg.jpg);
     background-repeat: round;
 }
 
@@ -31,7 +31,7 @@ body {
     }
 
     .top .t_right {
-        width: 10%;
+        width: 12%;
         float: right;
         margin: 50px;
     }
@@ -48,10 +48,16 @@ body {
     float: left;
 }
 
+.right {
+    height: 800px;
+    width: 20%;
+    float: right;
+}
+
     .middle .m_top {
         height: 300px;
         width: 100%;
-        background: url('../images/wKioL1hHYfmBlmcSAAGgnWFfTz0270.jpg');
+        background: url('../images/用户注册图上.jpg');
         background-repeat: repeat-x;
     }
 
