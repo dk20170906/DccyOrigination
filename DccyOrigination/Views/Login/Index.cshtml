@@ -11,12 +11,17 @@
             <div style="height:150px;"></div>
             <div class="media media-y margin-big-bottom">
             </div>
-            <form action="@Url.Action("Index","Login")" method="post">
+            <form action="@Url.Action("Login","Login")" method="post">
                 <div class="panel loginbox">
                     <div class="text-center margin-big padding-big-top">
                         <h1>后台管理中心</h1>
                     </div>
                     <div class="panel-body" style="padding:30px; padding-bottom:10px; padding-top:10px;">
+                        <div class="form-group" id="msgshow">
+                            <div class="field field-icon-right">
+                                <label style="color:red">@ViewBag.LoginMsg</label>
+                            </div>
+                        </div>
                         <div class="form-group">
                             <div class="field field-icon-right">
                                 <input type="text" class="input input-big" name="acountUser" id="acountUser" placeholder="登录账号/邮箱/手机号" />
@@ -38,11 +43,19 @@
                     </div>
                     <div style="padding:30px;">
                         <input type="submit" id="button" class="button button-block bg-main text-big input-big" value="登录">
+                        <br />
+                        @Html.ActionLink("找回密码", "Agreement", new { @class = "button button-block bg-main text-big input-big" });
                     </div>
                 </div>
             </form>
         </div>
     </div>
 </div>
+@section Scripts{
+    <script type="text/javascript">
+
+    </script>
+}
+
 
 

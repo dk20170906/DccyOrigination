@@ -25,9 +25,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\SystemAdm\" />
     <Folder Include="Html\" />
-    <Folder Include="wwwroot\loginstatic\" />
   </ItemGroup>
 
 </Project>

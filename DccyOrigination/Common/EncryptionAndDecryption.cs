@@ -346,14 +346,14 @@ namespace DccyOrigination.Common
         #endregion
 
         #region 3、方法三 (可逆加密)
-        const string KEY_64 = "VavicApp";//注意了，是8个字符，64位
-        const string IV_64 = "VavicApp";
+        const string KEY_64 = "DccyTApp";//注意了，是8个字符，64位
+        const string IV_64 = "DccyTApp";
         /// <summary>
         /// 加密
         /// </summary>
         /// <param name="data">待加密的数据字符</param>
         /// <returns></returns>
-        public string Encode(string data)
+        public static string Encode(string data)
         {
             byte[] byKey = System.Text.ASCIIEncoding.ASCII.GetBytes(KEY_64);
             byte[] byIV = System.Text.ASCIIEncoding.ASCII.GetBytes(IV_64);
@@ -375,7 +375,7 @@ namespace DccyOrigination.Common
         /// </summary>
         /// <param name="data">待解密的数据字符</param>
         /// <returns></returns>
-        public string Decode(string data)
+        public static string Decode(string data)
         {
             byte[] byKey = System.Text.ASCIIEncoding.ASCII.GetBytes(KEY_64);
             byte[] byIV = System.Text.ASCIIEncoding.ASCII.GetBytes(IV_64);

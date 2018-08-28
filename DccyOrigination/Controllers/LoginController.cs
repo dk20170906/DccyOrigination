@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using DccyOrigination.Common;
+using DccyOrigination.EF;
+using DccyOrigination.Models;
+using DccyOrigination.Models.Result;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -22,19 +25,82 @@ namespace DccyOrigination.Controllers
             TempData["SecurityCode"] = code; //验证码存放在TempData中
             return File(TooUnit. CreateValidateGraphic(code), "image/Jpeg");
         }
-        public JsonResult Login()
+        [HttpPost]
+        public ActionResult Login(string acountName,string password,string code)
         {
-   
-            return Json(null);
-        }
+            AdmUser admUser = null;
+            #region 用户名验证
+            if (acountName != null && acountName.Length > 0 && acountName != "")
+            {
+              var userAcountEncode=  EncryptionAndDecryption.Encode(acountName);
+              admUser=  DbContextExample.Db.AdmUser.First(u => u.UserAccounts == userAcountEncode || u.Email == userAcountEncode || u.Tel == userAcountEncode);
+                if (admUser!=null&&admUser.Id>0)
+                {
+                }
+                else
+                {
+                    ViewBag.LoginMsg = "请输入合法的登录帐号或帐号不存在！！！";
+                    return View("Index");
+                }
+            }
+            else
+            {
+                ViewBag.LoginMsg = "请输入合法的登录帐号！！！";
+                return View("Index");
+            }
+            #endregion
+            #region 密码验证
+            if (password != null && password.Length > 0 && password != "")
+            {
+                var userPwdEncode = EncryptionAndDecryption.Encode(password);
+                if (admUser.Password.Equals(userPwdEncode))
+                {
+                }
+                else
+                {                                                                                                                  
+                    ViewBag.LoginMsg = "密码错误！！！";
+                    return View("Index");
+                }
+            }
+            else
+            {
+                ViewBag.LoginMsg = "请输入合法的登录密码！！！";
+                return View("Index");
+            }
+            #endregion
+            #region 验证码
+            if (code != null && code.Length > 0 && code != "")
+            {
+                if (code.Equals(TempData["SecurityCode"]))
+                {
+                    return RedirectToAction("Index", "SysAdm", admUser);
+                }
+                else
+                {
+                    ViewBag.LoginMsg = "验证码输入错误！！！";
+                    return View("Index");
+                }
+            }
+            else
+            {
+                ViewBag.LoginMsg = "请输入合法的验证码！！！";
+                return View("Index");
+            }
+            #endregion
 
-      
+        }
+     
+       public ActionResult Agreement()
+        {
+            return View();
+        }
 
         // GET: Login/Details/5
         public ActionResult Details(int id)
         {
             return View();
         }
+
 
         // GET: Login/Create
         public ActionResult Create()
@@ -45,7 +111,7 @@ namespace DccyOrigination.Controllers
         // POST: Login/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Create(IFormCollection collection,AdmUser admUser)
         {
             try
             {
