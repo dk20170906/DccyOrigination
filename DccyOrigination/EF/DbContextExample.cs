@@ -13,7 +13,28 @@ namespace DccyOrigination.EF
     /// </summary>
     public sealed class DbContextExample
     {
-      static  IConfigurationBuilder builder = new ConfigurationBuilder().AddJsonFile("appsettings.json");
+        https://blog.csdn.net/hhhh222222/article/details/77896522
+        https://www.cnblogs.com/LibraThinker/p/6086026.html
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            var builder = new ConfigurationBuilder()
+                        .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
+
+            var configuration = builder.Build();
+
+            string connectionString = configuration.GetConnectionString("MyConnection");
+
+            optionsBuilder.UseMySQL(connectionString);
+        }
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            // Sets the properties that make up the primary key for this entity type.
+            builder.Entity<User>().HasKey(m => m.ID);
+            base.OnModelCreating(builder);
+        }
+
+        static  IConfigurationBuilder builder = new ConfigurationBuilder().AddJsonFile("appsettings.json");
       static  IConfigurationRoot configuration = builder.Build();
       static  string conStr = configuration["SqlServerConnectiion"].ToString();
       //  static string conStr = ConfigurationManager.ConnectionStrings["SqlServerConnectiion"].ToString();
