@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "用户注册";
 }
 <link href="@Url.Content("~/loginstatic/css/register.css")" rel="stylesheet" />
@@ -11,22 +10,26 @@
     <div class="t_title">欢迎注册</div>
     <div class="t_right">
         <span style="color: gray">已有账号</span>
-        @Html.ActionLink("请登陆", "Index")
+        @Html.ActionLink("请登陆", "Index","Login")
     </div>
 </div>
 <!--左边框-->
 <div class="left"></div>
 <!--中间区域-->
-<form action="@Url.Action("Create","AdmUser")" method="post">
-    <div class="middle">
-        <div class="m_top"></div>
+
+<div class="middle">
+    <div class="m_top"></div>
+    <form action="@Url.Action("Create","AdmUser")" method="post">
+        @Html.AntiForgeryToken()
+        <input type="hidden" name="Id">
+        <input type="hidden" name="Guid">
         <!--注册信息-->
         <div class="item">
             <div class="i_name">
-                <label for="username">用户名</label>
+                <label for="username">账户</label>
             </div>
             <div class="i_left">
-                <input type="text" id="username">
+                <input type="text" id="UserAccounts" name="UserAccounts">
             </div>
             <div class="i_right"></div>
         </div>
@@ -35,7 +38,7 @@
                 <label for="password">密码</label>
             </div>
             <div class="i_left">
-                <input type="password" id="password">
+                <input type="password" id="password" name="Password">
             </div>
             <div class="i_right"></div>
         </div>
@@ -70,10 +73,10 @@
             </div>
             <div class="i_left">
                 <div class="sex">
-                    <label for="main">男</label><input type="radio" name="sex" id="main">
+                    <label for="main">男</label><input type="radio" name="Sex" id="main">
                 </div>
                 <div class="sex">
-                    <label for="femain">女</label><input type="radio" name="sex" id="femain">
+                    <label for="femain">女</label><input type="radio" name="Sex" id="femain">
                 </div>
 
             </div>
@@ -105,8 +108,19 @@
                 <input type="submit" value="立即注册">
             </div>
         </div>
-    </div>
-</form>
+    </form>
+</div>
+
 <div class="right"></div>
+
+
+@section Scripts{ 
+       <script  type="text/javascript">
+
+
+
+       </script>
+}
+
 
 

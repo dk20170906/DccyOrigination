@@ -47,6 +47,10 @@ namespace DccyOrigination.Models
         /// 部门id
         /// </summary>
         public int DepId { get; set; }
+         /// <summary>
+         /// 性别 0女1男
+         /// </summary>
+        public int Sex { get; set; }
         /// <summary>
         /// 邮箱
         /// </summary>

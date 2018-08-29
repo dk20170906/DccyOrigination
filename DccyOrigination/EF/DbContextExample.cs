@@ -1,6 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -11,8 +13,11 @@ namespace DccyOrigination.EF
     /// </summary>
     public sealed class DbContextExample
     {
-
-      static  DbContextOptions<DccyDbContext> Options = new DbContextOptionsBuilder<DccyDbContext>().UseSqlServer("").Options;
+      static  IConfigurationBuilder builder = new ConfigurationBuilder().AddJsonFile("appsettings.json");
+      static  IConfigurationRoot configuration = builder.Build();
+      static  string conStr = configuration["SqlServerConnectiion"].ToString();
+      //  static string conStr = ConfigurationManager.ConnectionStrings["SqlServerConnectiion"].ToString();
+     static  DbContextOptions<DccyDbContext> Options = new DbContextOptionsBuilder<DccyDbContext>().UseSqlServer(conStr).Options;
         /// <summary>
         /// 延迟初始化数据库连接
         /// </summary>

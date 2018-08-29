@@ -5,6 +5,7 @@ using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Threading.Tasks;
 
 namespace DccyOrigination.Common
@@ -95,7 +96,22 @@ namespace DccyOrigination.Common
                 g.Dispose();
                 image.Dispose();
             }
-        } 
+        }
+            /// <summary>
+            /// 生成RSA密钥
+            /// </summary>
+            /// <returns></returns>
+        public static RSAParameters GenerateKey()
+        {
+            using (var key = new RSACryptoServiceProvider(2048))
+            {
+                return key.ExportParameters(true);
+            }
+        }
+        #endregion
+        #region token
+
+
         #endregion
 
     }
