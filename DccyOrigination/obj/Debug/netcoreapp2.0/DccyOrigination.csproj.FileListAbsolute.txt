@@ -8,14 +8,3 @@ E:\Work\DccyOrg\DccyOrg\DccyOrigination\DccyOrigination\obj\Debug\netcoreapp2.0\
 E:\Work\DccyOrg\DccyOrg\DccyOrigination\DccyOrigination\obj\Debug\netcoreapp2.0\DccyOrigination.AssemblyInfo.cs
 E:\Work\DccyOrg\DccyOrg\DccyOrigination\DccyOrigination\obj\Debug\netcoreapp2.0\DccyOrigination.dll
 E:\Work\DccyOrg\DccyOrg\DccyOrigination\DccyOrigination\obj\Debug\netcoreapp2.0\DccyOrigination.pdb
-E:\Work\DccyOrigination\DccyOrigination\bin\Debug\netcoreapp2.0\DccyOrigination.deps.json
-E:\Work\DccyOrigination\DccyOrigination\bin\Debug\netcoreapp2.0\DccyOrigination.runtimeconfig.json
-E:\Work\DccyOrigination\DccyOrigination\bin\Debug\netcoreapp2.0\DccyOrigination.runtimeconfig.dev.json
-E:\Work\DccyOrigination\DccyOrigination\bin\Debug\netcoreapp2.0\DccyOrigination.dll
-E:\Work\DccyOrigination\DccyOrigination\bin\Debug\netcoreapp2.0\DccyOrigination.pdb
-E:\Work\DccyOrigination\DccyOrigination\obj\Debug\netcoreapp2.0\DccyOrigination.csproj.CoreCompileInputs.cache
-E:\Work\DccyOrigination\DccyOrigination\obj\Debug\netcoreapp2.0\DccyOrigination.AssemblyInfoInputs.cache
-E:\Work\DccyOrigination\DccyOrigination\obj\Debug\netcoreapp2.0\DccyOrigination.AssemblyInfo.cs
-E:\Work\DccyOrigination\DccyOrigination\obj\Debug\netcoreapp2.0\DccyOrigination.dll
-E:\Work\DccyOrigination\DccyOrigination\obj\Debug\netcoreapp2.0\DccyOrigination.pdb
-E:\Work\DccyOrigination\DccyOrigination\obj\Debug\netcoreapp2.0\DccyOrigination.csprojAssemblyReference.cache
