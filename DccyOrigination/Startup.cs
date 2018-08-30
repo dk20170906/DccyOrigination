@@ -26,7 +26,7 @@ namespace DccyOrigination
             var conStr = Configuration.GetConnectionString("SqlServerConnectiion");
             services.AddDbContext<DccyDbContext>(options => options.UseSqlServer(conStr));
 
-            
+              
             services.AddMvc();
         }
 
@@ -42,7 +42,6 @@ namespace DccyOrigination
             {
                 app.UseExceptionHandler("/Home/Error");
             }
-
             app.UseStaticFiles();
 
             app.UseMvc(routes =>
