@@ -31,5 +31,11 @@ namespace DccyOrigination.Models.SysManagement
         /// 操作时间
         /// </summary>
         public DateTime OpTime { get; set; }
+        /// <summary>
+        /// 时间戳
+        /// </summary>
+        [Timestamp]
+        [ConcurrencyCheck]
+        public byte[] TimestampV { get; set; }
     }
 }

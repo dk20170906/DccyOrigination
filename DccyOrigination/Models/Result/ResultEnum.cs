@@ -12,7 +12,7 @@ namespace DccyOrigination.Models.Result
 
         可授权=100,
         可访问=101,
-        
+
      
 
     }

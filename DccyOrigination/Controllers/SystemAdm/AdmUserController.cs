@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using DccyOrigination.Common;
@@ -33,28 +34,37 @@ namespace DccyOrigination.Controllers.SystemAdm
         // POST: AdmUser/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create(IFormCollection collection,AdmUser admUser)
+        public IActionResult Create(IFormCollection collection, AdmUser admUser)
         {
             try
             {
                 // TODO: Add insert logic here
-                if (admUser.Id>0)
+                if (admUser.Id > 0)
                 {
                     admUser.Password = EncryptionAndDecryption.Encode(admUser.Password);
-                    DbContextExample.Db.AdmUser.Update(admUser);
+                    DBHandler.Db.AdmUser.Update(admUser);
                 }
                 else
                 {
                     admUser.CreateTime = DateTime.Now;
                     admUser.Password = EncryptionAndDecryption.Encode(admUser.Password);
-                    DbContextExample.Db.AdmUser.Add(admUser);
+                    // _DccyDbContext.AdmUser.Add(admUser);
+                    DBHandler.Db.AdmUser.Add(admUser);
                 }
-                DbContextExample.Db.SaveChanges();
-                return RedirectToAction(nameof(Index));
+                int m = DBHandler.DbSavaChange();
+                if (m>0)
+                {
+                    return RedirectToAction(nameof(Index));
+                }
+                else
+                {
+                    return null;
+                }
+           
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                return View();
+                return RedirectToAction("Error","Home",new ErrorViewModel { RequestId =ex.Message});
             }
         }
 

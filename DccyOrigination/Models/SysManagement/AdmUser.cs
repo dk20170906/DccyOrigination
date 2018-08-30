@@ -75,5 +75,11 @@ namespace DccyOrigination.Models
         /// 缩略图
         /// </summary>
         public string ThumbnailImage { get; set; }
+        /// <summary>
+        /// 时间戳
+        /// </summary>
+        [Timestamp]
+        [ConcurrencyCheck]
+        public byte[] TimestampV { get; set; }
     }
 }

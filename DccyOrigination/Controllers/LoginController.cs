@@ -21,21 +21,21 @@ namespace DccyOrigination.Controllers
         public ActionResult SecurityCode()
         {
             string oldcode = TempData["SecurityCode"] as string;
-            string code =TooUnit. CreateRandomCode(4); //验证码的字符为4个
+            string code = TooUnit.CreateRandomCode(4); //验证码的字符为4个
             TempData["SecurityCode"] = code; //验证码存放在TempData中
-            return File(TooUnit. CreateValidateGraphic(code), "image/Jpeg");
+            return File(TooUnit.CreateValidateGraphic(code), "image/Jpeg");
         }
         [HttpPost]
-        public ActionResult Login(string acountName,string password,string code)
+        public ActionResult Login(string acountName, string password, string code)
         {
             AdmUser admUser = null;
             #region 用户名验证
             if (acountName != null && acountName.Length > 0 && acountName != "")
             {
-              var userAcountEncode=  EncryptionAndDecryption.Encode(acountName);
-              admUser=  DbContextExample.Db.AdmUser.First(u => u.UserAccounts == userAcountEncode || u.Email == userAcountEncode || u.Tel == userAcountEncode);
-                if (admUser!=null&&admUser.Id>0)
+                var user = DBHandler.Db.AdmUser.FirstOrDefault(u => u.UserAccounts == acountName || u.Email == acountName || u.Tel == acountName);
+                if (user != null && user.Id > 0)
                 {
+                    admUser = user;
                 }
                 else
                 {
@@ -57,7 +57,7 @@ namespace DccyOrigination.Controllers
                 {
                 }
                 else
-                {                                                                                                                  
+                {
                     ViewBag.LoginMsg = "密码错误！！！";
                     return View("Index");
                 }
@@ -73,7 +73,7 @@ namespace DccyOrigination.Controllers
             {
                 if (code.Equals(TempData["SecurityCode"]))
                 {
-                    return RedirectToAction("Index", "SysAdm", admUser);
+                    return RedirectToAction("Index", "Home", admUser);
                 }
                 else
                 {
@@ -89,11 +89,24 @@ namespace DccyOrigination.Controllers
             #endregion
 
         }
-     
-       public ActionResult Agreement()
+        /// <summary>
+        /// 协议书
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult Agreement()
         {
             return View();
         }
+        /// <summary>
+        /// 找回密码
+        /// </summary>
+        /// <returns></returns>
+        public IActionResult FindPassword()
+        {
+            return View();
+        }
+
+
 
         // GET: Login/Details/5
         public ActionResult Details(int id)
@@ -111,7 +124,7 @@ namespace DccyOrigination.Controllers
         // POST: Login/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection,AdmUser admUser)
+        public ActionResult Create(IFormCollection collection, AdmUser admUser)
         {
             try
             {

@@ -9,10 +9,8 @@ namespace DccyOrigination.Models.SysManagement
     /// <summary>
     /// 系统管理父类
     /// </summary>
-    public class AdmModel
-    {
-        [Key]
-        public int Id { get; set; }
+    public class AdmModel  :Entity
+    { 
         /// <summary>
         /// 父Id
         /// </summary>
@@ -25,13 +23,6 @@ namespace DccyOrigination.Models.SysManagement
         /// 父GUiD
         /// </summary>
         public string PGuid { get; set; }
-        /// <summary>
-        /// 创建时间
-        /// </summary>
-        public DateTime CreateTime { get; set; }
-        /// <summary>
-        /// 描述
-        /// </summary>
-        public string Description { get; set; }
+      
     }
 }

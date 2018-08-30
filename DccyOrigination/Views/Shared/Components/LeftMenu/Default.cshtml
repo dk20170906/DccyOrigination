@@ -1,0 +1,21 @@
+﻿
+@{
+    Layout = null;
+}
+<link href="@Url.Content("~/css/leftmenu.css")" rel="stylesheet" />
+<script src="@Url.Content("~/lib/js/leftmeun.js")"></script>
+<!--包含的菜单的div-->
+<div id="left_menu">
+
+
+</div>
+@section Scripts{
+    <script type="text/javascript">
+        //自动执行,根据数据创建菜单
+        $({
+            createTree();
+        })
+       
+    </script>
+
+}
