@@ -13,7 +13,7 @@ namespace DccyOrigination
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        public Startup (IConfiguration configuration)
         {
             Configuration = configuration;
         }
@@ -21,17 +21,17 @@ namespace DccyOrigination
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
-        public void ConfigureServices(IServiceCollection services)
+        public void ConfigureServices (IServiceCollection services)
         {
             var conStr = Configuration.GetConnectionString("SqlServerConnectiion");
             services.AddDbContext<DccyDbContext>(options => options.UseSqlServer(conStr));
 
-              
+
             services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure (IApplicationBuilder app, IHostingEnvironment env)
         {
             if (env.IsDevelopment())
             {
@@ -49,7 +49,12 @@ namespace DccyOrigination
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
+
+                routes.MapRoute(
+                 name: "API",
+                 template: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
             });
+
         }
     }
 }

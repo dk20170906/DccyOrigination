@@ -78,6 +78,8 @@ namespace DccyOrigination.Migrations
 
                     b.Property<string>("Guid");
 
+                    b.Property<bool>("IsDelete");
+
                     b.Property<string>("PGuid");
 
                     b.Property<int>("Pid");
@@ -102,6 +104,8 @@ namespace DccyOrigination.Migrations
                     b.Property<int>("DepId");
 
                     b.Property<string>("Description");
+
+                    b.Property<bool>("IsDelete");
 
                     b.Property<int>("JurId");
 
@@ -128,6 +132,8 @@ namespace DccyOrigination.Migrations
 
                     b.Property<string>("Description");
 
+                    b.Property<bool>("IsDelete");
+
                     b.Property<int>("JurType");
 
                     b.Property<int>("RoleId");
@@ -152,6 +158,8 @@ namespace DccyOrigination.Migrations
                     b.Property<string>("Description");
 
                     b.Property<string>("Guid");
+
+                    b.Property<bool>("IsDelete");
 
                     b.Property<string>("JurName");
 
@@ -203,6 +211,8 @@ namespace DccyOrigination.Migrations
 
                     b.Property<string>("Guid");
 
+                    b.Property<bool>("IsDelete");
+
                     b.Property<string>("PGuid");
 
                     b.Property<int>("Pid");
@@ -232,6 +242,8 @@ namespace DccyOrigination.Migrations
 
                     b.Property<string>("Description");
 
+                    b.Property<bool>("IsDelete");
+
                     b.Property<int>("JurType");
 
                     b.Property<byte[]>("TimestampV")
@@ -256,6 +268,8 @@ namespace DccyOrigination.Migrations
                     b.Property<DateTime>("CreateTime");
 
                     b.Property<string>("Description");
+
+                    b.Property<bool>("IsDelete");
 
                     b.Property<int>("JurType");
 
@@ -282,6 +296,8 @@ namespace DccyOrigination.Migrations
 
                     b.Property<string>("Description");
 
+                    b.Property<bool>("IsDelete");
+
                     b.Property<int>("JurType");
 
                     b.Property<byte[]>("TimestampV")
@@ -306,6 +322,8 @@ namespace DccyOrigination.Migrations
                     b.Property<DateTime>("CreateTime");
 
                     b.Property<string>("Description");
+
+                    b.Property<bool>("IsDelete");
 
                     b.Property<int>("JurType");
 

@@ -18,7 +18,7 @@ namespace DccyOrigination.Controllers
         {
             return View();
         }
-        public ActionResult SecurityCode()
+        public ActionResult SecurityCode ()
         {
             string oldcode = TempData["SecurityCode"] as string;
             string code = TooUnit.CreateRandomCode(4); //验证码的字符为4个
@@ -105,9 +105,6 @@ namespace DccyOrigination.Controllers
         {
             return View();
         }
-
-
-
         // GET: Login/Details/5
         public ActionResult Details(int id)
         {

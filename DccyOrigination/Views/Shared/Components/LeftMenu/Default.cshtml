@@ -4,20 +4,53 @@
 }
 
 
-<!--包含的菜单的div-->
-<div id="left_menu">
-</div>
-@section Scripts{
-    <script type="text/javascript">
-        //自动执行,根据数据创建菜单  
-        window.onload = function () { create_root_node(); }  
-        //自动执行,根据数据创建菜单
-        $(function () {
-            debugger;
-            var html = createTree();
-            $('#left_menu').html(html);
-        })
-       
-    </script>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
 
-}
+    ul {
+        list-style: none;
+    }
+
+    header {
+        height: 60px;
+        padding: 0 20px;
+        line-height: 60px;
+        background: #3c8dbc;
+    }
+
+    .logo {
+        float: left;
+    }
+
+    .userinfo {
+        float: right
+    }
+
+    aside {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 230px;
+        height: 100%;
+        margin-top: 60px;
+        padding: 20px;
+        background: #2d2d2d;
+        color: #fff;
+    }
+
+    .panel {
+        margin-bottom: 0;
+    }
+
+    aside > ul > li.panel {
+        margin-bottom: 15px;
+    }
+</style>
+
+<script src="~/admindex/js/leftmenu.js"></script>
+<aside id="left_menu"></aside>
+
+

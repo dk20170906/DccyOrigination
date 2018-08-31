@@ -1,6 +1,7 @@
 ﻿
 @{
     ViewData["Title"] = "登录";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
 }
 
 
@@ -8,7 +9,7 @@
 <div class="wrap">
     <div class="wpn">
         <div class="form-data pos">
-            <a href=""><img src="~/admstatic/imgs/logo.png" class="head-logo"></a>
+            <a href=""><img src="~/loginindex/images/logo.png" class="head-logo"></a>
             <div class="change-login">
                 <p class="account_number on">账号登录</p>
                 <p class="message">短信登录</p>
@@ -25,10 +26,9 @@
                     <input type="password" id="pass" autocomplete="new-password">
                     <span class="tel-warn pass-err hide"><em>账号或密码错误，请重新输入</em><i class="icon-warn"></i></span>
                 </p>
-                <p class="p-input pos code ">
+                <p class="p-input pos code">
                     <label for="veri">请输入验证码</label>
-                    <input type="text" id="veri" >
-                    <img src="#" alt="Alternate Text" />
+                    <input type="text" id="veri">
                     <img src="@Url.Content("~/Login/SecurityCode")" onclick="@Url.Content("~/Login/SecurityCode")">
                     <span class="tel-warn img-err hide"><em>账号或密码错误，请重新输入</em><i class="icon-warn"></i></span>
                     <!-- <a href="javascript:;">换一换</a> -->
@@ -49,7 +49,7 @@
                 </p>
             </div>
             <div class="r-forget cl">
-                @Html.ActionLink("注册", "Register", new { }, new { @class = "z" })
+                @Html.ActionLink("用户注册", "Create","AdmUser", new { }, new { @class = "z" })
                 @Html.ActionLink("忘记密码", "FindPassword", new { }, new { @class = "y" })
             </div>
             <button class="lang-btn off log-btn">登录</button>

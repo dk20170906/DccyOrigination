@@ -28,6 +28,29 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\admindex\fonts\fontawesome-webfont.svg" />
+    <None Include="wwwroot\admindex\fonts\fontawesome-webfont.woff2" />
+    <None Include="wwwroot\admindex\fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="wwwroot\admindex\js\bootstrap.js" />
+    <None Include="wwwroot\admindex\js\jquery.dcjqaccordion.2.7.js" />
+    <None Include="wwwroot\admindex\js\jquery.fileupload.js" />
+    <None Include="wwwroot\admindex\js\jquery.min.js" />
+    <None Include="wwwroot\admindex\js\jquery.nicescroll.js" />
+    <None Include="wwwroot\admindex\js\jquery.scrollTo.js" />
+    <None Include="wwwroot\admindex\js\jquery.slimscroll.js" />
+    <None Include="wwwroot\admindex\js\jquery.vmap.asia.js" />
+    <None Include="wwwroot\admindex\js\jquery.vmap.australia.js" />
+    <None Include="wwwroot\admindex\js\jquery.vmap.europe.js" />
+    <None Include="wwwroot\admindex\js\jquery.vmap.js" />
+    <None Include="wwwroot\admindex\js\jquery.vmap.sampledata.js" />
+    <None Include="wwwroot\admindex\js\jquery.vmap.world.js" />
+    <None Include="wwwroot\admindex\js\jquery2.0.3.min.js" />
+    <None Include="wwwroot\admindex\js\lightbox-plus-jquery.min.js" />
+    <None Include="wwwroot\admindex\js\monthly.js" />
+    <None Include="wwwroot\admindex\js\morris.js" />
+    <None Include="wwwroot\admindex\js\raphael-min.js" />
+    <None Include="wwwroot\admindex\js\script.js" />
+    <None Include="wwwroot\admindex\js\scripts.js" />
     <None Include="wwwroot\js\site.js" />
     <None Include="wwwroot\js\site.min.js" />
   </ItemGroup>
@@ -39,6 +62,12 @@
     <Content Update="wwwroot\admstatic\imgs\bj.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Update="wwwroot\js\site.js">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\js\site.min.js">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Content>
     <Content Update="wwwroot\lib\js\site.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -48,6 +77,11 @@
     <None Update="Html\getpass.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\API\Data\" />
+    <Folder Include="Areas\API\Models\" />
   </ItemGroup>
 
 </Project>

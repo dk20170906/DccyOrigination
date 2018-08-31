@@ -39,3 +39,16 @@ C:\Users\Administrator\Desktop\DCCY\trunk\DccyOrigination\obj\Debug\netcoreapp2.
 C:\Users\Administrator\Desktop\DCCY\trunk\DccyOrigination\bin\Debug\netcoreapp2.0\Html\getpass.html
 C:\Users\Administrator\Desktop\DCCY\trunk\DccyOrigination\bin\Debug\netcoreapp2.0\wwwroot\lib\js\site.js
 C:\Users\Administrator\Desktop\DCCY\trunk\DccyOrigination\bin\Debug\netcoreapp2.0\wwwroot\admstatic\imgs\bj.jpg
+E:\dk\QccyOrigination\DccyOrigination\trunk\DccyOrigination\obj\Debug\netcoreapp2.0\DccyOrigination.csproj.CoreCompileInputs.cache
+E:\dk\QccyOrigination\DccyOrigination\trunk\DccyOrigination\obj\Debug\netcoreapp2.0\DccyOrigination.AssemblyInfoInputs.cache
+E:\dk\QccyOrigination\DccyOrigination\trunk\DccyOrigination\obj\Debug\netcoreapp2.0\DccyOrigination.AssemblyInfo.cs
+E:\dk\QccyOrigination\DccyOrigination\trunk\DccyOrigination\bin\Debug\netcoreapp2.0\wwwroot\lib\js\site.js
+E:\dk\QccyOrigination\DccyOrigination\trunk\DccyOrigination\bin\Debug\netcoreapp2.0\appsettings.json
+E:\dk\QccyOrigination\DccyOrigination\trunk\DccyOrigination\bin\Debug\netcoreapp2.0\DccyOrigination.deps.json
+E:\dk\QccyOrigination\DccyOrigination\trunk\DccyOrigination\bin\Debug\netcoreapp2.0\DccyOrigination.runtimeconfig.json
+E:\dk\QccyOrigination\DccyOrigination\trunk\DccyOrigination\bin\Debug\netcoreapp2.0\DccyOrigination.runtimeconfig.dev.json
+E:\dk\QccyOrigination\DccyOrigination\trunk\DccyOrigination\bin\Debug\netcoreapp2.0\DccyOrigination.dll
+E:\dk\QccyOrigination\DccyOrigination\trunk\DccyOrigination\bin\Debug\netcoreapp2.0\DccyOrigination.pdb
+E:\dk\QccyOrigination\DccyOrigination\trunk\DccyOrigination\obj\Debug\netcoreapp2.0\DccyOrigination.csprojResolveAssemblyReference.cache
+E:\dk\QccyOrigination\DccyOrigination\trunk\DccyOrigination\obj\Debug\netcoreapp2.0\DccyOrigination.dll
+E:\dk\QccyOrigination\DccyOrigination\trunk\DccyOrigination\obj\Debug\netcoreapp2.0\DccyOrigination.pdb
